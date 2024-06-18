@@ -19,21 +19,17 @@ use CodeIgniter\Config\Routing as BaseRouting;
 class Routing extends BaseRouting
 {
     /**
-     * For Defined Routes.
      * An array of files that contain route definitions.
      * Route files are read in order, with the first match
      * found taking precedence.
      *
      * Default: APPPATH . 'Config/Routes.php'
-     *
-     * @var list<string>
      */
     public array $routeFiles = [
         APPPATH . 'Config/Routes.php',
     ];
 
     /**
-     * For Defined Routes and Auto Routing.
      * The default namespace to use for Controllers when no other
      * namespace has been specified.
      *
@@ -42,7 +38,6 @@ class Routing extends BaseRouting
     public string $defaultNamespace = 'App\Controllers';
 
     /**
-     * For Auto Routing.
      * The default controller to use when no other controller has been
      * specified.
      *
@@ -51,7 +46,6 @@ class Routing extends BaseRouting
     public string $defaultController = 'Home';
 
     /**
-     * For Defined Routes and Auto Routing.
      * The default method to call on the controller when no other
      * method has been set in the route.
      *
@@ -60,8 +54,7 @@ class Routing extends BaseRouting
     public string $defaultMethod = 'index';
 
     /**
-     * For Auto Routing.
-     * Whether to translate dashes in URIs for controller/method to underscores.
+     * Whether to translate dashes in URIs to underscores.
      * Primarily useful when using the auto-routing.
      *
      * Default: false
@@ -97,7 +90,6 @@ class Routing extends BaseRouting
     public bool $autoRoute = false;
 
     /**
-     * For Defined Routes.
      * If TRUE, will enable the use of the 'prioritize' option
      * when defining routes.
      *
@@ -106,16 +98,7 @@ class Routing extends BaseRouting
     public bool $prioritize = false;
 
     /**
-     * For Defined Routes.
-     * If TRUE, matched multiple URI segments will be passed as one parameter.
-     *
-     * Default: false
-     */
-    public bool $multipleSegmentsOneParam = false;
-
-    /**
-     * For Auto Routing (Improved).
-     * Map of URI segments and namespaces.
+     * Map of URI segments and namespaces. For Auto Routing (Improved).
      *
      * The key is the first URI segment. The value is the controller namespace.
      * E.g.,
@@ -123,18 +106,7 @@ class Routing extends BaseRouting
      *       'blog' => 'Acme\Blog\Controllers',
      *   ]
      *
-     * @var array<string, string>
+     * @var array [ uri_segment => namespace ]
      */
     public array $moduleRoutes = [];
-
-    /**
-     * For Auto Routing (Improved).
-     * Whether to translate dashes in URIs for controller/method to CamelCase.
-     * E.g., blog-controller -> BlogController
-     *
-     * If you enable this, $translateURIDashes is ignored.
-     *
-     * Default: false
-     */
-    public bool $translateUriToCamelCase = false;
 }
