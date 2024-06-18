@@ -4,14 +4,6 @@ namespace Config;
 
 use CodeIgniter\Config\BaseService;
 
-// Models
-use App\Models\UserModel;
-use App\Models\SessionModel;
-use App\Models\CategoryModel;
-use App\Models\OrderDetailsModel;
-use App\Models\OrderModel;
-use App\Models\ProductModel;
-
 /**
  * Services Configuration file.
  *
@@ -37,59 +29,4 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
-
-    // Models
-    public static function userModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('userModel');
-        }
-
-        return new UserModel();
-    }
-
-    public static function sessionModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('sessionModel');
-        }
-
-        return new SessionModel();
-    }
-    
-    public static function categoryModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('categoryModel');
-        }
-
-        return new CategoryModel();
-    }
-
-    public static function orderDetailsModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('orderDetailsModel');
-        }
-
-        return new OrderDetailsModel();
-    }
-
-    public static function orderModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('orderModel');
-        }
-
-        return new OrderModel();
-    }
-
-    public static function productModel($getShared = true)
-    {
-        if ($getShared) {
-            return static::getSharedInstance('productModel');
-        }
-
-        return new ProductModel();
-    }
 }
